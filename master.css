@@ -1,0 +1,166 @@
+/* Start Global Variables  */
+:root {
+    --main-background-color: #27272a;
+    --yellow-color: #f2c04f;
+    --red-color: #f7536d;
+    --white-color: #e2e8f0;
+    --blue-color: #4193f7;
+}
+
+/* End Global Variables  */
+
+/* Start Global Rules  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-background-color);
+    font-family: cursive;
+}
+
+.container {
+    height: 100vh;
+    width: 720px;
+    margin: auto;
+}
+
+.container header {
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    color: var(--red-color);
+    letter-spacing: 3px;
+}
+
+.container main {
+    padding: 30px;
+}
+
+
+.block-clicking {
+    pointer-events: none;
+}
+
+
+/* End Global Rules  */
+
+/* Start Game Info Styling  */
+.container main .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.container main .game-info::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.container main .game-info .players {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.container main .game-info .players div {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.container main .game-info .players .red {
+    border-color: var(--red-color);
+}
+
+.container main .game-info .players .red.turn {
+    background-color: var(--red-color);
+}
+
+.container main .game-info .players .yellow {
+    border-color: var(--yellow-color);
+}
+
+.container main .game-info .players .yellow.turn {
+    background-color: var(--yellow-color);
+}
+
+.container main .game-info .msg {
+    color: var(--white-color);
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.container main .game-info .msg.red-turn {
+    color: var(--red-color);
+}
+
+.container main .game-info .msg.yellow-turn {
+    color: var(--yellow-color);
+}
+
+.container main .game-info .msg.won {
+    color: #38E54D;
+}
+
+
+
+/* End Game Info Styling  */
+
+
+/* Start Game Board Styling  */
+.container main .game-board {
+    background-color: var(--blue-color);
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(7, calc(570px / 7));
+    grid-template-rows: repeat(6, calc(570px / 7));
+    gap: 10px;
+    cursor: pointer;
+}
+
+.container main .game-board .tile {
+    border-radius: 50%;
+    background-color: var(--main-background-color);
+    border: 3px solid #01579b;
+}
+
+/* End Game Board Styling  */
+
+@media (max-width: 767px) {
+    .container {
+        width: 520px;
+    }
+
+    .container main .game-info .msg {
+
+        font-size: 18px;
+    }
+
+    .container main .game-board {
+
+        grid-template-columns: repeat(7, calc(370px / 7));
+        grid-template-rows: repeat(6, calc(370px / 7));
+    }
+
+
+}
